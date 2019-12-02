@@ -19,15 +19,17 @@ var server = require("http").Server(app);
 var io = require("socket.io")(server);
 /**Define server running port */
 var PORT = process.env.PORT || 8000;
-// app.use(helmet.frameguard({ action: "sameorigin" }));
+app.use(helmet.frameguard({ action: "sameorigin" }));
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  // res.header("X-Frame_Options","deny");
-  // res.header("X-Frame_Options","sameorigin");
-  // res.header("X-XSS-Protection","1; mode=block");
-  // res.header("Cache-Control","no-cache");
+  res.header("X-Frame_Options","deny");
+  res.header("X-Frame_Options","sameorigin");
+  res.header("X-XSS-Protection","1; mode=block");
+  res.header("Cache-Control","no-cache");
+  res.header("Pragma","no-cache");
+  res.header("X-Content-Type-Options","nosniff");
   next();
 });
 
