@@ -1,0 +1,27 @@
+.reviewPanel{
+    display: none;
+}
+#confirmedPanel{
+    display: none;
+}
+.item{
+    border-bottom: 1px solid black;
+}
+.fa-star{
+    color: #FFDF00;
+}
+#description{
+    width: auto;
+}
+@media (min-width: 992px) {  
+    #description{
+        width: 600px;
+    }   
+}
+@media (min-width: 768px) { #description{
+    width: 400px;
+}    }
+
+@media (min-width: 1200px) { #description{
+    width: 600px;
+}    }
