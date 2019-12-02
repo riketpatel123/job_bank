@@ -27,7 +27,7 @@ app.use((req, res, next) => {
   res.header("X-Frame_Options","deny");
   res.header("X-Frame_Options","sameorigin");
   res.header("X-XSS-Protection","1; mode=block");
-  res.header("Cache-Control","no-cache");
+  res.header("Cache-Control","no-cache, no-store, must-revalidate");
   res.header("Pragma","no-cache");
   res.header("X-Content-Type-Options","nosniff");
   next();
